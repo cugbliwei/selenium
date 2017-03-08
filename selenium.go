@@ -258,7 +258,7 @@ type WebDriver interface {
 	Close() error
 	// SwitchFrame switches to the given frame. The frame parameter can be the
 	// frame's name or ID.
-	SwitchFrame(frame string) error
+	SwitchFrame(frame interface{}) error
 	// SwitchWindow switches the context to the specified window.
 	SwitchWindow(name string) error
 	// CloseWindow closes the specified window.

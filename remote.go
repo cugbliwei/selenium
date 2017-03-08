@@ -595,12 +595,9 @@ func (wd *remoteWD) ResizeWindow(name string, width, height int) error {
 	return err
 }
 
-func (wd *remoteWD) SwitchFrame(frame string) error {
+func (wd *remoteWD) SwitchFrame(frame interface{}) error {
 	params := map[string]interface{}{
 		"id": frame,
-	}
-	if len(frame) == 0 {
-		params["id"] = nil
 	}
 	return wd.voidCommand("/session/%s/frame", params)
 }
